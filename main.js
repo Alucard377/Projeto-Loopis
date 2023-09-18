@@ -53,7 +53,7 @@ function mostrarObejeto(objeto) {
         const botao = document.createElement('button'); // Criando o elemento <button>
         const imagem = document.createElement('img'); // Criando o elemento <img>
         imagem.id = 'lixeiro';
-        imagem.src = 'lixeiro.png'; // Definindo o atributo src da imagem
+        imagem.src = 'Imagens/lixeiro.png'; // Definindo o atributo src da imagem
         botao.appendChild(imagem); // Adicionando a imagem como filho do botão
 
         novoElemento.appendChild(botao);
