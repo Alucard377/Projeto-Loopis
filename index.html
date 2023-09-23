@@ -1,43 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="main.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="main.js" defer></script>
+  <link rel="stylesheet" href="style.css">
 </head>
-    
+
 <body>
-  <div class="caixaEsquerda">
-        <h1>Cadastro</h1>
+  <h1>LOOPIS GAME LIST</h1>
+  <main>
+    <div class="caixaEsquerda">
+      <h1>Cadastro</h1>
 
 
-        <div id="input1">
+      <div id="input1">
         <h2>Nome</h2>
         <input id="campo1" type="text" placeholder="Digite o nome do jogo..." size="55px">
-        </div>
+      </div>
 
 
-        <div id="input2">
+      <div id="input2">
         <h2>Descricao</h2>
         <input id="campo2" type="text" placeholder="Digite uma breve descrição sobre o jogo..." size="55px">
-        </div>
+      </div>
 
-        <div id="opcoes">
-            <h2>Marcar como favorito</h2>
-            <input type="radio" name="gender" value="sim"> Sim
-            <input type="radio" name="gender" value="nao"> Nao
-        </div>
+      <h2>Marcar como favorito?</h2>
+      <div id="opcoes">
+        <input type="radio" name="gender" value="sim">
+        <p>Sim</p>
+        <input type="radio" name="gender" value="nao">
+        <p>Nao</p>
+      </div>
 
-        <div>
-            <button id="botao" type="button" onclick="funcoesCompiladas()">Salvar</button>
-        </div>
+      <div>
+        <button id="botao" type="button" onclick="funcoesCompiladas()">Salvar</button>
+      </div>
+
     </div>
 
-    <!-- Todos os jogos serão inseridos dentro da div abaixo-->
-    <div id="inserir">
-        
+    <div class="caixaDireita">
+      <!-- Todos os jogos serão inseridos dentro da div abaixo-->
+      <h1>Lista</h1>
+      <div id="inserir">
+
+      </div>
     </div>
+
+  </main>
 </body>
+
 </html>
