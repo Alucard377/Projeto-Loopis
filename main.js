@@ -28,7 +28,13 @@ function armazenarObjeto() {
 }
 
 function receberObejeto() {
-  return JSON.parse(localStorage.jogos); // Busca a chave e converte para objeto
+  let chave = localStorage.getItem('jogos');
+  if (chave && chave != '[]') {
+    return JSON.parse(chave); //converte para objeto
+  } else {
+    return null;
+  }
+
 }
 
 function funcoesCompiladas() {
@@ -100,20 +106,32 @@ function criarElemento(objeto) {
 
 function mostrarObejeto(objeto) {
   const destino = document.getElementById("inserir");
-  destino.textContent = "";
-
-  for (let i in objeto) {
-    if (objeto[i].z) {//Se o elemento for favorito
-      const novoElemento = criarElemento(objeto[i]);
-      document.getElementById("inserir").appendChild(novoElemento); // Adicionando o botão ao documento na div inserir
+  if (objeto) {
+    /*
+    if(destino.firstChild){
+      destino.firstChild.remove();
     }
-  }
+    */
+    destino.textContent = "";
 
-  for (let i in objeto) {
-    if (objeto[i].z == false) {//Se o elemento não for favorito
-      const novoElemento = criarElemento(objeto[i]);
-      document.getElementById("inserir").appendChild(novoElemento); // Adicionando o botão ao documento na div inserir
+    for (let i in objeto) {
+      if (objeto[i].z) {//Se o elemento for favorito
+        const novoElemento = criarElemento(objeto[i]);
+        document.getElementById("inserir").appendChild(novoElemento); // Adicionando o botão ao documento na div inserir
+      }
     }
+
+    for (let i in objeto) {
+      if (objeto[i].z == false) {//Se o elemento não for favorito
+        const novoElemento = criarElemento(objeto[i]);
+        document.getElementById("inserir").appendChild(novoElemento); // Adicionando o botão ao documento na div inserir
+      }
+    }
+  } else {
+    let textoPlaceholder = document.createElement("h2");
+    textoPlaceholder.id = "placeholderLista";
+    textoPlaceholder.textContent = "Não há jogos cadastrados";
+    destino.appendChild(textoPlaceholder);
   }
 }
 
@@ -140,6 +158,10 @@ function guardarElemento(elemento) { // Guarda o elemento que vai ser excluído
       divPai.firstChild.remove(); // Remove o primeiro filho
     }
     divPai.remove(); // Exclui divPai
+
+    if (!listaJogos[0]) { //Aparentemente a unica forma de verificar se esta vazia, listaJogos.lenght === 0 nao funciona
+      mostrarObejeto(null);
+    }
   }
   return botaoLixeiro;
 }
