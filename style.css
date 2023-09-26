@@ -20,7 +20,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
 }
 
 main {
@@ -305,7 +304,6 @@ input[type="radio"]:checked {
 
   html{
     display: block;
-    height: 100%;
   }
 
   .caixaDireita,
