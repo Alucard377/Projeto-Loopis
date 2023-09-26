@@ -17,6 +17,10 @@ body {
   background-image: url("Imagens/background.png");
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 
 main {
@@ -86,43 +90,39 @@ p {
 }
 
 #botao {
-  /*
-  width: 330px;
-  height: 72px;
-  */
   width: 330px;
   height: 72px;
   border-radius: 28px;
   background-color: #4181FF;
+  color: white;
   font-size: 32px;
   font-family: Inter;
-  color: white;
+  border: 2px solid #FFF;
 }
 
 .inputTexto {
   display: inline;
-  width: 97%;
+  width: 90%;
 }
 
 #campo1 {
-  line-height: 330%;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 1px solid #333;
+  padding: 15px
 }
 
 #campo2 {
-  height: 147px;
+  height: 120px;
   resize: none;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 1px solid #333;
+  padding: 15px
 }
 
 .inputTexto::placeholder {
   color: #00000033;
   font-family: Inter;
   font-weight: 700;
-  vertical-align: top;
-  padding: 8px;
   font-size: 16px;
 }
 
@@ -273,14 +273,15 @@ input[type="radio"]:checked {
   width: 28px;
   height: 27px;
   margin-right: 2%;
-  margin-bottom: 22%;
+  margin-bottom: 20%;
   margin-top: 1%;
 }
 
 /* para a barra movel*/
 
 #inserir::-webkit-scrollbar {
-  height: 20px; /*Aparentemete nao muda nada, mas precisa para rodar*/
+  height: 20px;
+  /*Aparentemete nao muda nada, mas precisa para rodar*/
   width: 11px;
 }
 
@@ -296,4 +297,206 @@ input[type="radio"]:checked {
 
 #inserir::-webkit-scrollbar-thumb:hover {
   background: #D3D3D3;
+}
+
+/* Toma ai, Marcos Paulo. Totalmente responsivo */
+
+@media (max-width: 1440px) {
+
+  html{
+    display: block;
+    height: 100%;
+  }
+
+  .caixaDireita,
+  .caixaEsquerda {
+    width: 411.75px;
+    /*439.2px*/
+    height: 592.5px;
+  }
+
+  header>h1 {
+    font-size: 41.6px;
+  }
+
+  #botao {
+    width: 200.5px;
+    height: 56.8px;
+    border-radius: 18.2px;
+    font-weight: 500;
+    font-size: 20.8px;
+  }
+
+  .inputTexto::placeholder {
+    font-size: 10.4px;
+  }
+
+  #opcoes p {
+    font-size: 20.8px;
+  }
+
+  .caixaEsquerda h1,
+  .caixaDireita h1 {
+    font-size: 41.6px;
+  }
+
+  .caixaEsquerda h1 {
+    margin-top: 28px;
+  }
+
+  .caixaEsquerda h2 {
+    font-size: 20.8px;
+    margin-bottom: 5px;
+  }
+
+  #placeholderLista {
+    font-size: 146.25%;
+  }
+
+  .elemento p {
+    font-size: 10px;
+  }
+
+  .elemento h2 {
+    font-size: 16px;
+  }
+
+  input[type="radio"] {
+    width: 39.9px;
+    height: 39.9px;
+  }
+
+  /* Espaçamentos */
+
+  .caixaEsquerda {
+    border-left: 36.3px solid white;
+    border-right: 36.3px solid white;
+  }
+
+  .caixaDireita h1 {
+    margin-top: 7.88%;
+    margin-bottom: 8%;
+  }
+
+  #descricao {
+    margin-bottom: 24px;
+  }
+
+  #input1 {
+    margin-bottom: 5%;
+  }
+
+  #input2 {
+    margin-bottom: 6.4%;
+  }
+
+  #inserir {
+    height: 75.857%;
+  }
+
+  .elemento {
+    margin-bottom: 3.12%;
+    width: 87%;
+  }
+
+  .joystick {
+    width: 44.8px;
+    height: 48.8px;
+  }
+
+  .estrela {
+    width: 22.4px;
+    height: 21.6px;
+    margin-bottom: 20.9%;
+  }
+}
+
+@media (max-width: 1000px) {
+  html{
+    height: auto;
+  }
+
+  body {
+    width: 97%;
+  }
+
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .caixaEsquerda {
+    margin-bottom: 10%;
+  }
+
+  .caixaDireita {
+    margin-bottom: 10%;
+  }
+
+  .caixaDireita,
+  .caixaEsquerda {
+    width: 360px;
+    height: 538px;
+  }
+
+  header>h1 {
+    font-size: 33.28px;
+  }
+
+  /*
+  #botao {
+    width: 171.6px;
+    height: 37.44px;
+    border-radius: 14.56px;
+    font-size: 16.64px;
+  }
+  */
+
+  #botao {
+    width: 150.4px;
+    height: 45.44px;
+    border-radius: 18.2px;
+    font-weight: 500;
+    font-size: 18.8px;
+  }
+
+  .inputTexto::placeholder {
+    font-size: 10.32px;
+  }
+
+  #opcoes p {
+    font-size: 16.64px;
+  }
+
+  .caixaEsquerda h1,
+  .caixaDireita h1 {
+    font-size: 33.28px;
+  }
+
+  .caixaEsquerda h1 {
+    margin-top: 22.4px;
+  }
+
+  .caixaEsquerda h2 {
+    font-size: 16.64px;
+    margin-bottom: 4px;
+  }
+
+  #placeholderLista {
+    font-size: 117%;
+  }
+
+  .elemento p {
+    font-size: 8px;
+  }
+
+  .elemento h2 {
+    font-size: 12.8px;
+  }
+
+  input[type="radio"] {
+    width: 31.92px;
+    height: 31.92px;
+  }
+
 }
