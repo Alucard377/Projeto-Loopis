@@ -1,6 +1,12 @@
-@charset "UTF-8";
+:root {
+  font-family: 'Inter', sans-serif;
+}
 
-@import url('https://fonts.cdnfonts.com/css/inter');
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: 'Inter var', sans-serif;
+  }
+}
 
 #lixeiro {
   height: 20px;
@@ -16,26 +22,27 @@ body {
 main {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
 }
 
 h1>span {
   color: #FFFB62
 }
 
-body>h1 {
+header h1 {
   display: flex;
   justify-content: center;
   color: white;
   font-family: Inter;
   font-weight: 750;
-  font-size: 300%;
+  font-size: 64px;
 }
 
 h1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  font-weight: 710;
+  font-weight: 700;
   font-family: Inter;
 }
 
@@ -55,39 +62,82 @@ p {
   display: flex;
   flex-direction: column;
 
-  width: 40vw;
-  /* 80 vh aproximadamente 458px*/
-  min-height: 80vh;
+  width: 549px;
+  height: 790px;
   background-color: white;
-  border-radius: 1.5%;
+  border-radius: 16px;
 }
 
-input[type="text"] {
-  width: 90%;
+/*
+#input2 h2{
+  margin-bottom: 10%;
+}
+*/
+#descricao {
+  margin-bottom: 30px;
+}
+
+#input1 {
+  margin-bottom: 5%;
+}
+
+#input2 {
+  margin-bottom: 8%;
+}
+
+#botao {
+  /*
+  width: 330px;
+  height: 72px;
+  */
+  width: 330px;
+  height: 72px;
+  border-radius: 28px;
+  background-color: #4181FF;
+  font-size: 32px;
+  font-family: Inter;
+  color: white;
+}
+
+.inputTexto {
+  display: inline;
+  width: 97%;
 }
 
 #campo1 {
-  line-height: 150%;
+  line-height: 330%;
+  border-radius: 10px;
+  border: 1px solid #333;
 }
 
 #campo2 {
-  line-height: 800%;
+  height: 147px;
+  resize: none;
+  border-radius: 10px;
+  border: 1px solid #333;
 }
 
-input[type="text"]::placeholder {
+.inputTexto::placeholder {
   color: #00000033;
   font-family: Inter;
   font-weight: 700;
+  vertical-align: top;
+  padding: 8px;
+  font-size: 16px;
 }
 
 input[type="radio"] {
   appearance: none;
-  width: 35px;
-  height: 35px;
+  width: 57px;
+  height: 57px;
   border: 1px solid #333;
   border-radius: 50%;
   background-color: #fff;
   cursor: pointer;
+}
+
+input[value="nao"] {
+  margin-left: 8%;
 }
 
 /* Estilo para quando o botão de rádio está marcado */
@@ -101,13 +151,15 @@ input[type="radio"]:checked {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin: auto;
 }
 
 #opcoes p {
   color: #4C5CFF;
   font-weight: 700;
-  font-size: 20px;
-  margin: 0px;
+  font-size: 32px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 #opcoes {
@@ -122,37 +174,76 @@ input[type="radio"]:checked {
   color: #4C5CFF;
 }
 
+.caixaEsquerda h1,
+.caixaDireita h1 {
+  font-size: 64px;
+}
+
+.caixaEsquerda h2 {
+  margin-top: 0px;
+  font-size: 32px;
+}
+
 .caixaEsquerda {
-  margin-left: 5.5%;
+  margin: 0px;
   border-left: 2vw solid white;
+  border-right: 2vw solid white;
   box-sizing: border-box;
 }
 
 .caixaDireita {
-  margin-left: 9%;
+  border-bottom: 4.14%;
+}
+
+#placeholderLista {
+  font-size: 225%;
+  color: #00000033;
 }
 
 .caixaDireita h1 {
   display: flex;
   justify-content: center;
+  margin-top: 6.85%;
+  margin-bottom: 7%;
 }
 
-.caixaEsquerda h2 {
+
+#input1 h2,
+#input2 h2 {
   margin-bottom: 0px;
 }
 
 #inserir {
-  max-height: 60vh;
+  height: 76.857%;
   overflow-y: auto;
   overflow-x: hidden;
-  display: block; /* Coisas estranhas acontecem quando isso é marcado, mas talvez seja necessario*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 3px;
 }
 
 .elemento {
-  /*display: flex;*/
+  display: flex;
+  width: 90%;
   border-radius: 20px;
-  margin-bottom: 5%;
+  margin-bottom: 3.9%;
+}
+
+.elemento div {
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: break-word;
+  max-width: 74.5%;
+  margin-bottom: 2%;
+  margin-top: 1%;
+}
+
+.joystick {
+  width: 56px;
+  height: 61px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .elemento p {
@@ -160,7 +251,7 @@ input[type="radio"]:checked {
   margin: 0px;
   font-family: Inter;
   font-weight: 600;
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .elemento h2 {
@@ -168,15 +259,29 @@ input[type="radio"]:checked {
   margin: 0px;
   font-family: Inter;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 20px;
 }
 
+.lixeiro {
+  width: 23px;
+  height: 25px;
+  margin-left: auto;
+  margin-top: 1%;
+}
 
-/*Para a barra movel*/
+.estrela {
+  width: 28px;
+  height: 27px;
+  margin-right: 2%;
+  margin-bottom: 22%;
+  margin-top: 1%;
+}
+
+/* para a barra movel*/
 
 #inserir::-webkit-scrollbar {
   height: 20px; /*Aparentemete nao muda nada, mas precisa para rodar*/
-  width: 9px;
+  width: 11px;
 }
 
 #inserir::-webkit-scrollbar-track {

@@ -7,6 +7,8 @@
   <title>Document</title>
   <script src="main.js" defer></script>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
 
 <body>
@@ -23,13 +25,20 @@
 
       <div id="input1">
         <h2>Nome</h2>
-        <input id="campo1" type="text" placeholder="Digite o nome do jogo...">
+        <input id="campo1" class="inputTexto" type="text" placeholder="Digite o nome do jogo...">
       </div>
 
 
       <div id="input2">
-        <h2>Descricao</h2>
-        <input id="campo2" type="text" placeholder="Digite uma breve descrição sobre o jogo...">
+        <h2 id="descricao">Descricao</h2>
+        <textarea id="campo2" class="inputTexto" type="text"
+          placeholder="Digite uma breve descrição sobre o jogo..."></textarea>
+        <!--
+        <div class="caixaInput">
+          <input id="campo2" type="text" placeholder="Digite uma breve descrição sobre o jogo...">
+        </div>
+        -->
+
       </div>
 
       <h2>Marcar como favorito?</h2>

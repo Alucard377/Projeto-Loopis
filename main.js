@@ -46,11 +46,10 @@ function criarElemento(objeto) {
   const novoElemento = document.createElement("div");
   novoElemento.className = "elemento";
 
-  /*
   const joystick = document.createElement("img");
   joystick.src = 'Imagens/joystick.png';
+  joystick.className = "joystick";
   novoElemento.appendChild(joystick);
-  */
 
   const h2 = document.createElement("h2");
   h2.style.color = "white";
@@ -106,22 +105,25 @@ function criarElemento(objeto) {
 
 function mostrarObejeto(objeto) {
   const destino = document.getElementById("inserir");
+  destino.textContent = "";
   if (objeto) {
     /*
     if(destino.firstChild){
       destino.firstChild.remove();
     }
     */
-    destino.textContent = "";
-
-    for (let i in objeto) {
+    let linguagemRuim = Object.keys(objeto);
+    let tamanho = linguagemRuim.length;
+    for (let a in objeto) {
+      let i = tamanho-1-a;
       if (objeto[i].z) {//Se o elemento for favorito
         const novoElemento = criarElemento(objeto[i]);
         document.getElementById("inserir").appendChild(novoElemento); // Adicionando o botão ao documento na div inserir
       }
     }
 
-    for (let i in objeto) {
+    for (let a in objeto) {
+      let i = tamanho -1 - a;
       if (objeto[i].z == false) {//Se o elemento não for favorito
         const novoElemento = criarElemento(objeto[i]);
         document.getElementById("inserir").appendChild(novoElemento); // Adicionando o botão ao documento na div inserir
